@@ -3,13 +3,24 @@ class ImportController < ApplicationController
   end
 
   def users
-    puts 'Coucou User'
     Person.import(params[:file])
     redirect_to root_path
   end
 
   def buildings
-    puts 'Coucou Building'
+    Building.import(params[:file])
     redirect_to root_path
+  end
+
+  def update
+    @person = Person.find(params[:id])
+    @person.update(person_params)
+    redirect_to @person
+  end
+
+  private
+
+  def person_params
+    params.require(:person).permit(:firstname, :lastname, :email, :home_phone_number, :mobile_phone_number, :address)
   end
 end

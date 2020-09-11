@@ -1,19 +1,22 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  reference: MyString
-  email: MyString
-  home_phone_number: MyString
-  mobile_phone_number: MyString
-  firstname: MyString
-  lastname: MyString
-  address: MyString
+  id: 0
+  reference: 1
+  email: 'test_1@test.com'
+  home_phone_number: '0000000'
+  mobile_phone_number: '1111111'
+  firstname: 'Clark'
+  lastname: 'Kent'
+  address: 'Metropolis'
+
 
 two:
-  reference: MyString
-  email: MyString
-  home_phone_number: MyString
-  mobile_phone_number: MyString
-  firstname: MyString
-  lastname: MyString
-  address: MyString
+  id: 1
+  reference: 2
+  email: ''
+  home_phone_number: ''
+  mobile_phone_number: ''
+  firstname: 'Peter'
+  lastname: 'Parker'
+  address: ''
