@@ -1,0 +1,17 @@
+<%= flash[:notice] %>
+<div>
+  <h4>Import users!</h4>
+  <%= form_tag import_users_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import from file" %>
+  <% end %>
+</div>
+
+
+<div>
+  <h4>Import users!</h4>
+  <%= form_tag import_buildings_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import from file" %>
+  <% end %>
+</div>
