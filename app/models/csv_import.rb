@@ -6,11 +6,16 @@ class CsvImport
     end
   end
 
-  def self.update_blank_attribues(model, model_hash, updatable_attributes)
+  def self.update_attribues(model, model_hash, updatable_attributes)
     attributes = {}
+    puts '/////////////'
     updatable_attributes.each do |attribute|
-      attributes[attribute.to_sym] = model_hash[attribute.to_sym] if model.send(attribute).blank?
+      unless model.send(attribute.to_sym).eql? model_hash[attribute]
+        puts "updating #{model.class}##{attribute} replacing : #{model.send(attribute.to_sym)} by #{model_hash[attribute]}"
+        attributes[attribute.to_sym] = model_hash[attribute]
+      end
     end
+    puts '/////////////'
     model.update(attributes) unless attributes.empty?
   end
 end

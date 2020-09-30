@@ -3,12 +3,12 @@ class Building < ApplicationRecord
 
 
   def self.import(file)
-    CSVImport.import(file) do |model_hash|
-      building = Building.find_by(address: model_hash['address'] , zip_code: model_hash['zip_code'], city: model_hash['city'])
+    CsvImport.import(file) do |model_hash|
+      building = Building.find_by(reference: model_hash['reference'])
       if building.nil?
         Building.create(model_hash)
       else
-        CSVImport.update_blank_attribues(building, model_hash, BUILDING_UPDATABLE_ATTRIBUTES)
+        CsvImport.update_attribues(building, model_hash, BUILDING_UPDATABLE_ATTRIBUTES)
       end
     end
   end
