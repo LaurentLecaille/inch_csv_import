@@ -9,14 +9,3 @@ one:
   firstname: 'Clark'
   lastname: 'Kent'
   address: 'Metropolis'
-
-
-two:
-  id: 1
-  reference: 2
-  email: ''
-  home_phone_number: ''
-  mobile_phone_number: ''
-  firstname: 'Peter'
-  lastname: 'Parker'
-  address: ''
